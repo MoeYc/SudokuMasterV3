@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - preConditions:
+      - runningAs:
+          username: sa
+      - dbms:
+          type: h2
+
+
+  - include:
+      file: db/changelog/db.changelog-till2.0.0.yaml

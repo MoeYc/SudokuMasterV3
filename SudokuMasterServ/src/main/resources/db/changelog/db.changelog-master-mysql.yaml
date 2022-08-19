@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - preConditions:
+      - dbms:
+          type: mysql
+
+  - include:
+      file: db/changelog/db.changelog-till2.0.0.yaml

@@ -1,0 +1,355 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1573623421349-1
+      author: D-SHB-25009070
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: username
+                  type: VARCHAR(50)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: authority
+                  type: VARCHAR(50)
+            tableName: authorities
+  - changeSet:
+      id: 1573623421349-2
+      author: D-SHB-25009070
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: id
+                  type: VARCHAR(81)
+              - column:
+                  name: answer
+                  type: VARCHAR(81)
+              - column:
+                  name: comment
+                  type: VARCHAR(255)
+              - column:
+                  name: created_at
+                  type: datetime
+              - column:
+                  name: created_by
+                  type: VARCHAR(60)
+              - column:
+                  name: difficulty
+                  type: INT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: resolved_by_ai
+                  type: BOOLEAN
+            tableName: grid
+  - changeSet:
+      id: 1573623421349-3
+      author: D-SHB-25009070
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  name: next_val
+                  type: BIGINT
+            tableName: hibernate_sequence
+  - changeSet:
+      id: 1573623421349-4
+      author: D-SHB-25009070
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: id
+                  type: INT
+              - column:
+                  name: code
+                  type: VARCHAR(720)
+              - column:
+                  name: comment
+                  type: VARCHAR(255)
+              - column:
+                  name: created_at
+                  type: datetime
+              - column:
+                  name: created_by
+                  type: VARCHAR(60)
+              - column:
+                  name: grid_id
+                  type: VARCHAR(81)
+            tableName: position
+  - changeSet:
+      id: 1573623421349-5
+      author: D-SHB-25009070
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: name
+                  type: VARCHAR(50)
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+            tableName: role
+  - changeSet:
+      id: 1573623421349-6
+      author: D-SHB-25009070
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    primaryKey: true
+                  name: username
+                  type: VARCHAR(50)
+              - column:
+                  name: email
+                  type: VARCHAR(100)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: enabled
+                  type: BOOLEAN
+              - column:
+                  name: full_name
+                  type: VARCHAR(100)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: password
+                  type: VARCHAR(100)
+            tableName: appuser
+  - changeSet:
+      id: 1573623421349-7
+      author: D-SHB-25009070
+      changes:
+        - loadData:
+            columns:
+              - column:
+                  header: username
+                  name: username
+                  type: STRING
+              - column:
+                  header: authority
+                  name: authority
+                  type: STRING
+            commentLineStartsWith: '#'
+            encoding: UTF-8
+            file: db/changelog/csv/authorities.csv
+            quotchar: '"'
+            separator: ','
+            tableName: authorities
+  - changeSet:
+      id: 1573623421349-8
+      author: D-SHB-25009070
+      changes:
+        - loadData:
+            columns:
+              - column:
+                  header: id
+                  name: id
+              - column:
+                  header: answer
+                  name: answer
+              - column:
+                  header: comment
+                  name: comment
+              - column:
+                  header: created_at
+                  name: created_at
+              - column:
+                  header: created_by
+                  name: created_by
+              - column:
+                  header: difficulty
+                  name: difficulty
+              - column:
+                  header: resolved_by_ai
+                  name: resolved_by_ai
+            commentLineStartsWith: '#'
+            encoding: UTF-8
+            file: db/changelog/csv/grid.csv
+            quotchar: '"'
+            separator: ','
+            tableName: grid
+  - changeSet:
+      id: 1573623421349-9
+      author: D-SHB-25009070
+      changes:
+        - loadData:
+            columns:
+              - column:
+                  header: next_val
+                  name: next_val
+                  type: NUMERIC
+            commentLineStartsWith: '#'
+            encoding: UTF-8
+            file: db/changelog/csv/hibernate_sequence.csv
+            quotchar: '"'
+            separator: ','
+            tableName: hibernate_sequence
+  - changeSet:
+      id: 1573623421349-10
+      author: D-SHB-25009070
+      changes:
+        - loadData:
+            columns:
+              - column:
+                  header: id
+                  name: id
+              - column:
+                  header: code
+                  name: code
+              - column:
+                  header: comment
+                  name: comment
+              - column:
+                  header: created_at
+                  name: created_at
+              - column:
+                  header: created_by
+                  name: created_by
+              - column:
+                  header: grid_id
+                  name: grid_id
+            commentLineStartsWith: '#'
+            encoding: UTF-8
+            file: db/changelog/csv/position.csv
+            quotchar: '"'
+            separator: ','
+            tableName: position
+  - changeSet:
+      id: 1573623421349-11
+      author: D-SHB-25009070
+      changes:
+        - loadData:
+            columns:
+              - column:
+                  header: name
+                  name: name
+                  type: STRING
+              - column:
+                  header: description
+                  name: description
+                  type: STRING
+            commentLineStartsWith: '#'
+            encoding: UTF-8
+            file: db/changelog/csv/role.csv
+            quotchar: '"'
+            separator: ','
+            tableName: role
+  - changeSet:
+      id: 1573623421349-12
+      author: D-SHB-25009070
+      changes:
+        - loadData:
+            columns:
+              - column:
+                  header: username
+                  name: username
+                  type: STRING
+              - column:
+                  header: email
+                  name: email
+                  type: STRING
+              - column:
+                  header: enabled
+                  name: enabled
+                  type: BOOLEAN
+              - column:
+                  header: full_name
+                  name: full_name
+                  type: STRING
+              - column:
+                  header: password
+                  name: password
+                  type: STRING
+            commentLineStartsWith: '#'
+            encoding: UTF-8
+            file: db/changelog/csv/appuser.csv
+            quotchar: '"'
+            separator: ','
+            tableName: appuser
+  - changeSet:
+      id: 1573623421349-13
+      author: D-SHB-25009070
+      changes:
+        - addUniqueConstraint:
+            columnNames: username, authority
+            constraintName: UK2uf74smucdwf9qal2n67m2343
+            tableName: authorities
+  - changeSet:
+      id: 1573623421349-14
+      author: D-SHB-25009070
+      changes:
+        - createIndex:
+            columns:
+              - column:
+                  name: authority
+            indexName: FKm9ox3l68awwv4fn9nqnaxujgi
+            tableName: authorities
+  - changeSet:
+      id: 1573623421349-15
+      author: D-SHB-25009070
+      changes:
+        - createIndex:
+            columns:
+              - column:
+                  name: grid_id
+            indexName: FKrnml78fhxynjqtoneun5f3bay
+            tableName: position
+  - changeSet:
+      id: 1573623421349-16
+      author: D-SHB-25009070
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: username
+            baseTableName: authorities
+            constraintName: FKhcqd6xr5j0otd5q58nnalyseb
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: username
+            referencedTableName: appuser
+            validate: true
+  - changeSet:
+      id: 1573623421349-17
+      author: D-SHB-25009070
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: authority
+            baseTableName: authorities
+            constraintName: FKm9ox3l68awwv4fn9nqnaxujgi
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: name
+            referencedTableName: role
+            validate: true
+  - changeSet:
+      id: 1573623421349-18
+      author: D-SHB-25009070
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: grid_id
+            baseTableName: position
+            constraintName: FKrnml78fhxynjqtoneun5f3bay
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: grid
+            validate: true
+
