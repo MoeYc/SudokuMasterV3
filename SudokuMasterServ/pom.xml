@@ -12,7 +12,7 @@
     </parent>
     <groupId>charlie.feng.game</groupId>
     <artifactId>sudokumasterserv</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>sudokumasterserv</name>
     <description>Sudoku Master Service</description>
 
@@ -48,7 +48,7 @@
         <connection>scm:git:git@github.com:fengertao/SudokuMasterV3.git</connection>
         <developerConnection>scm:git:git@github.com:fengertao/SudokuMasterV3.git</developerConnection>
         <url>https://github.com/fengertao/SudokuMasterV3</url>
-        <tag>sudokumasterserv-1.0.0</tag>
+        <tag>sudokumasterserv-0.7.0</tag>
     </scm>
     <issueManagement>
         <system>GitHub</system>
