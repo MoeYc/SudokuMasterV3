@@ -2,7 +2,7 @@
  * Copyright (c) 2018-2019,  Charlie Feng. All Rights Reserved.
  */
 
-import { getRequestInstance } from '@/.umi/plugin-request/request';
+import { getRequestInstance } from '@umijs/max';
 
 import { USER_URL } from './config';
 

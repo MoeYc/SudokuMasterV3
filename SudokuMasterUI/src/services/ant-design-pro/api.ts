@@ -1,6 +1,6 @@
 // @ts-ignore
 /* eslint-disable */
-import { getRequestInstance } from '@/.umi/plugin-request/request';
+import { getRequestInstance } from '@umijs/max';
 import { request } from '@umijs/max';
 
 /** 获取当前的用户 GET /api/login/currentUser */
